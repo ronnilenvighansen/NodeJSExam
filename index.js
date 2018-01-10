@@ -14,6 +14,38 @@ app.use(express.static('staticFiles'));
 
 app.use(bodyParser.urlencoded({extended : true}));
 
+app.get('/', function (req, res)
+{
+    res.sendFile(path + '/index.html', function (err)
+    {
+
+    });    
+});
+
+app.get('/index', function (req, res)
+{
+    res.sendFile(path + '/index.html', function (err)
+    {
+
+    });    
+});
+
+app.get('/videos', function(req, res)
+{
+    res.sendFile(path + '/videos.html', function (err)
+    {
+
+    });
+});
+
+app.get('/about', function(req, res)
+{
+    res.sendFile(path + '/about.html', function (err)
+    {
+
+    });
+});
+
 app.get('/comments', function(req, res)
 {
     MongoClient.connect(mongoDbUrl, function (err, db)
@@ -69,7 +101,7 @@ app.delete('/comments/:id', function(req, res)
 
 app.get('/login', function (req, res) 
 {
-    res.sendFile( path + 'login.html', function (err)
+    res.sendFile( path + '/login.html', function (err)
     {
 
     });
@@ -79,13 +111,13 @@ app.post('/login', function (req, res)
 {
     if (req.body.user === 'user')
     {
-        res.sendFile( path + 'verysecret.html', function (err)
+        res.sendFile( path + '/verysecret.html', function (err)
         {
             
         })
     } else
     {
-        res.sendFile( path + 'login.html', function (err)
+        res.sendFile( path + '/login.html', function (err)
         {
 
         });

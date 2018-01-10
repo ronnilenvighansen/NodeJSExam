@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Videos</title>
+    <link rel="stylesheet" type="text/css" href="sass/style.css">    
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#Hide1").click(function(){
+        $("#Video1").hide();
+    });
+    $("#Show1").click(function(){
+        $("#Video1").show();
+    });
+    $("#Hide2").click(function(){
+        $("#Video2").hide();
+    });
+    $("#Show2").click(function(){
+        $("#Video2").show();
+    });
+    $("#Hide3").click(function(){
+        $("#Video3").hide();
+    });
+    $("#Show3").click(function(){
+        $("#Video3").show();
+    });
+});
+</script>
+<div id="page_content">
+
+</div>
+
+<body>
+    <div class="LinksIndex">
+        <div class="LinksIndex" id="LinksIndex">
+            <div><a href="index">Front Page</a></div>
+            <div><a href="about">About Me</a></div>  
+            <div><a href="comments">Comment Section</a></div>          
+        </div>
+    </div>
+
+    <div class="HeadlineVideos">
+        <div class="HeadlineVideos" id="HeadlineVideos">
+            <h1>Videos!</h1>
+        </div>
+    </div>
+
+    <div class="Video1">
+        <div class="Video1" id="Video1">
+            <iframe id="Video1" width="420" height="315"
+                src="https://www.youtube.com/embed/uzjYz3gQ-i4">
+            </iframe>
+        </div> 
+    </div>
+    <div class="Buttons1">
+        <div class="Buttons1" id="Buttons1">
+            <button id="Hide1">Hide</button>
+            <button id="Show1">Show</button>
+        </div>
+    </div>
+
+    <div class="Video2">
+        <div class="Video2" id="Video2">
+            <iframe id="Video2" width="420" height="315"
+            object
+                src="https://www.youtube.com/embed/4i0Xsfs5k8o">
+            </iframe>
+        </div> 
+    </div>
+    
+    <div class="Buttons2">
+        <div class="Buttons2" id="Buttons2">
+            <button id="Hide2">Hide</button>
+            <button id="Show2">Show</button>
+        </div>
+    </div>
+
+    <div class="Video3">
+        <div class="Video3" id="Video3">
+            <iframe width="420" height="315"
+                src="https://www.youtube.com/embed/gKbiBwf9o0E">
+            </iframe>
+        </div> 
+    </div>
+    <div class="Buttons3">
+        <div class="Buttons3" id="Buttons3">
+            <button id="Hide3">Hide</button>
+            <button id="Show3">Show</button>
+        </div>
+    </div>
+</body>
+</html>
