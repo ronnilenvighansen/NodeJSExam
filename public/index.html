@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+</head>
+
+<link rel="stylesheet" type = "text/css" href="/style.css">
+
+<body>
+        <h1>Names and Addresses read from MongoDB</h1>
+    <div id="page_content">
+
+    </div>
+
+
+    <script>
+        $.getJSON("http://localhost:3000/comments", function (data) {
+
+            var html = "";
+
+            data.forEach(function(element) {
+                html += "<h1>" + element.name + "</h1>";
+            html += "<p>" + element.comment + "</p>"
+            }, this);
+
+        
+            $("#page_content").html(html); // inject the html into the div with id "page_content"
+        });
+    </script>
+
+
+    <div class="wrapper">
+    
+    
+    <nav>
+    
+    <div>
+        <img src="https://pbs.twimg.com/profile_images/378800000017423279/1a6d6f295da9f97bb576ff486ed81389_normal.png" alt="Cross-icon"> KEA Events
+    </div>
+    
+    <div class="topright">
+    Student Initiatives
+    <!-- <a href="">About</a> -->
+    <!-- <button><a href="/about.html">ONWARDS!</a></button> -->
+    
+    <form action="/login" method="post">
+      <input type="submit" value = "Info (Users)" />
+      </form>
+      
+      <form action="/login" method="post">
+        <input type="submit" value = "Edit Content (Admin)" />
+        </form>
+    </div>
+    
+    </nav>
+    
+    <header>
+    <div>
+    
+    <h1>The newest content from the all around the web</h1>
+    
+    </div>
+    
+    <div class = "text">
+        Hours of content
+    <br>
+      ready at your disposal
+    </div>
+    
+    <form class= "butan" action="/login" method="post">
+      <input type="submit" value = "Subscribe to the Newsletter" />
+      </form>
+    
+    
+    <div class="vid">
+        <iframe width="420" height="315"
+    src="https://www.youtube.com/embed/XGSy3_Czz8k?autoplay=0">
+    </iframe>
+    </div>
+    
+    </header>
+    
+    
+    
+    <div>
+    <section>
+    <hr>
+    <div>
+        <h1>Trending right now - join the newsletter for more updates!</h1>
+    </div>
+    
+    <div>
+    <table style="width:100%">
+      <tr>
+        <td><img src="http://spirit.web.id/wp-content/uploads/2016/06/Inilah-Potongan-Rambut-Pria-1-100x80.jpg" alt="Event 1"> 
+        <a href="#">Article 1</a></td>
+        <td><img src="http://spirit.web.id/wp-content/uploads/2016/06/Inilah-Potongan-Rambut-Pria-1-100x80.jpg" alt="x"></td>
+        <td><img src="http://spirit.web.id/wp-content/uploads/2016/06/Inilah-Potongan-Rambut-Pria-1-100x80.jpg" alt="x"></td>
+        <td><img src="http://spirit.web.id/wp-content/uploads/2016/06/Inilah-Potongan-Rambut-Pria-1-100x80.jpg" alt="x"></td>
+      </tr>
+      <tr>
+        <td><img src="http://spirit.web.id/wp-content/uploads/2016/06/Inilah-Potongan-Rambut-Pria-1-100x80.jpg" alt="Event 2"> 
+       <a href="#">Article 2</a></td>
+        <td><img src="http://spirit.web.id/wp-content/uploads/2016/06/Inilah-Potongan-Rambut-Pria-1-100x80.jpg" alt="x"></td>
+        <td><img src="http://spirit.web.id/wp-content/uploads/2016/06/Inilah-Potongan-Rambut-Pria-1-100x80.jpg" alt="x"></td>
+        <td><img src="http://spirit.web.id/wp-content/uploads/2016/06/Inilah-Potongan-Rambut-Pria-1-100x80.jpg" alt="x"></td>
+      </tr>
+      <tr>
+        <td><img src="http://spirit.web.id/wp-content/uploads/2016/06/Inilah-Potongan-Rambut-Pria-1-100x80.jpg" alt="Event 3"> 
+        <a href="#">Article 3</a></td>
+        <td><img src="http://spirit.web.id/wp-content/uploads/2016/06/Inilah-Potongan-Rambut-Pria-1-100x80.jpg" alt="x"></td>
+        <td><img src="http://spirit.web.id/wp-content/uploads/2016/06/Inilah-Potongan-Rambut-Pria-1-100x80.jpg" alt="x"></td>
+        <td><img src="http://spirit.web.id/wp-content/uploads/2016/06/Inilah-Potongan-Rambut-Pria-1-100x80.jpg" alt="x"></td>
+      </tr>
+    </table>
+    </div>
+    </section>
+    </div>
+    
+    <hr>
+    
+    <div>
+    <section>
+    <div>
+        Find us on facebook
+        and Twitter
+      <form action="/login" method="post">
+        <input type="submit" value = "Become a member" />
+        </form>
+    
+      <form class ="buten" action="/login" method="post">
+        <input type="submit" value = "See more pages" />
+        </form>
+    </div>
+    
+    </section>
+    </div>
+    
+    <footer>
+    Copyright © Jaksemesteren 2017 
+    </footer>
+    </div id="wrapper">
+    
+
+</body>
+
+</html>
