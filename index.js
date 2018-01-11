@@ -121,19 +121,22 @@ app.get('/login', function (req, res)
 
 app.post('/login', function (req, res)
 {
-    if (req.body.user === 'user' && req.body.password === 'password')
+    if (req.body.username === 'username' && req.body.password === 'password')
     {
         res.sendFile( path + '/secret.html', function (err)
         {
             
-        })
+        });
     } else
     {
         res.sendFile( path + '/login.html', function (err)
         {
 
         });
-    }
-})
+    };
+});
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000, function()
+{
+    console.log("Express server listening on port %d in %s mode.", this.address().port, app.settings.env);
+});
