@@ -1,0 +1,46 @@
+body {
+  background-color: #e6bdad; }
+
+#LinksIndex {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  justify-content: space-around; }
+
+#HeadlineIndex {
+  text-align: center; }
+
+#HeadlineVideos {
+  text-align: center; }
+
+#Video1 {
+  display: flex;
+  justify-content: center; }
+
+#Video2 {
+  display: flex;
+  justify-content: center; }
+
+#Video3 {
+  display: flex;
+  justify-content: center; }
+
+#Buttons1 {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+#Buttons2 {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+#Buttons3 {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+#HeadlineAboutMe {
+  text-align: center; }
+
+/*# sourceMappingURL=style.css.map */

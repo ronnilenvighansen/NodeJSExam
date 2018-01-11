@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title></title>
+    <title>Index</title>
     <meta charset="UTF-8">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 </head>
@@ -10,27 +10,20 @@
 <link rel="stylesheet" type = "text/css" href="/style.css">
 
 <body>
-    <h1>Names and Addresses read from MongoDB</h1>
-    <div id="page_content">
-
+    <div class="LinksIndex">
+        <div class="LinksIndex" id="LinksIndex">
+            <div><a href="videos">Videos</a></div>
+            <div><a href="about">About Me</a></div>
+            <div><a href="comments">Comment Section</a></div>            
+        </div>
     </div>
 
-
-    <script>
-        $.getJSON("http://localhost:3000/comments", function (data) {
-
-            var html = "";
-
-            data.forEach(function(element) {
-                html += "<h1>" + element.name + "</h1>";
-            html += "<p>" + element.comment + "</p>"
-            }, this);
-
-        
-            $("#page_content").html(html); // inject the html into the div with id "page_content"
-        });
-    </script>
-
+    <div class="HeadlineIndex">
+        <div class="HeadlineIndex" id="HeadlineIndex">
+            <h1>Welcome to my page!</h1>
+        </div>
+    </div>
+    
 
     <div class="wrapper"> 
 

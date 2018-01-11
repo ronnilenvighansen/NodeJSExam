@@ -48,6 +48,14 @@ app.get('/about', function(req, res)
 
 app.get('/comments', function(req, res)
 {
+    res.sendFile(path + '/comments.html', function (err)
+    {
+
+    });
+});
+
+app.get('/data', function(req, res)
+{
     MongoClient.connect(mongoDbUrl, function (err, db)
     {
         var col = db.collection('comments');
@@ -59,45 +67,49 @@ app.get('/comments', function(req, res)
     });
 });
 
-app.get('/comments/:id', function(req, res)
+app.post('/create', function(req, res)
 {    
     MongoClient.connect(mongoDbUrl, function(err, db)
     {
-        var col = db.collection('comments');     
-        col.findOne({'_id' : ObjectId(req.params.id)}, function(err, result)
+        db.collection('comments').insertOne(req.body, function(err, result)
         {
-            res.json(result);
+            db.close();
         });
-        db.close();
     });
+    res.redirect('/comments.html')
 });
 
-app.post('/comments', function(req, res)
-{    
+app.post('/update', function(req, res, next){
+    
+    var id = req.body.id;
+    var comment = {
+        name: req.body.name,
+        comment: req.body.comment
+    };
+
     MongoClient.connect(mongoDbUrl, function(err, db)
     {
-        var col = db.collection('comments');    
-        col.insertOne(req.body, function(err, result)
+        db.collection("comments").updateOne({"_id" : ObjectId(id)}, comment, function(err, res) 
         {
-            res.status(201);
-            res.json({msg : 'Comment created'});
+            db.close();
         });
-        db.close();
     });
+    res.redirect('/comments.html');
 });
 
-app.delete('/comments/:id', function(req, res)
-{
+app.post('/delete', function(req, res, next){
+    var id = req.body.id;
+
     MongoClient.connect(mongoDbUrl, function(err, db)
     {
-        var col = db.collection('comments');
-        col.deleteOne({'_id' : ObjectId(req.params.id)}, function(err, result)
+        db.collection('comments').deleteOne({"_id" : ObjectId(id)}, function(err, result)
         {
-            res.json(result);
+            db.close();
         });
-        db.close();
     });
+    res.redirect('/comments.html');
 });
+
 
 app.get('/login', function (req, res) 
 {
@@ -109,9 +121,9 @@ app.get('/login', function (req, res)
 
 app.post('/login', function (req, res)
 {
-    if (req.body.user === 'user')
+    if (req.body.user === 'user' && req.body.password === 'password')
     {
-        res.sendFile( path + '/verysecret.html', function (err)
+        res.sendFile( path + '/secret.html', function (err)
         {
             
         })
