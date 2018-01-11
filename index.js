@@ -6,7 +6,6 @@ const path = __dirname + '/public';
 
 const MongoClient = require('mongodb').MongoClient;
 const ObjectId = require('mongodb').ObjectID;
-//const mongoDbUrl = 'mongodb://ronnilenvighansen:ronni721@ronni-shard-00-00-cif7m.mongodb.net:27017,ronni-shard-00-01-cif7m.mongodb.net:27017,ronni-shard-00-02-cif7m.mongodb.net:27017/ronnispillerguitar?ssl=true&replicaSet=Ronni-shard-0&authSource=admin';
 const mongoDbUrl = 'mongodb://ronnilenvighansen:.Ronni2112.@ds247347.mlab.com:47347/ronnispillerguitar';
 
 
